@@ -2,6 +2,13 @@
 
 int main()
 {
+///this set the arm servo to flat position then raises it
+       enable_servos();
+    set_servo_position(3,0);
+    msleep(6550);
+    set_servo_position(3,300);
+    msleep(6550);
+    
     //Negative is away and positive is towards
     motor(0,-100);
     motor(3,300);
