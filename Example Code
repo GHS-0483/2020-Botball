@@ -1,0 +1,39 @@
+#include <kipr/botball.h>
+
+int main()
+{
+    printf("Hello World\n");//this isn't important and can be deleted
+    //also, note that two forward slashes allows you to comment on the code for that line
+    
+    //wait for light command goes at the beginning, don't remember what the format is though
+    //also timer for about 1 min 55 sec, IDK how to do that either
+    //here are some basics that I do remeber
+    enable_servos();//this must be added before you try to use servos
+    set_servo_position(0,800);//this would move the servo plugged in to port 0 to whatever position 800 is
+    
+    motor(0,85);//moves motor 0 at 85 percent power
+    motor(1,85);//theoretically, giving motors same power moves bot in a nice straight line
+    msleep(1500);//changing msleep value changes how long motors run
+    
+    motor(0,-30);//negative moves backwards
+    motor(1,-30);//unless Quintin happens, in which case forwards is backwards and backwards is forwards
+    msleep(1500);//msleep also makes bot pause before moving on
+    
+    //PSA: Jesus saves & so should you! The save button is at the top of this page
+    
+    motor(0,20);//let's say for now that motor 0 is on the left side and motor 1 is on the right
+    motor(1,45);//gradual turn towards whatever side motor 0 is on- in this case, the left
+    msleep(1500);//1500 is a good starting point- it is 1500 milliseconds, or 1.5 seconds
+    
+    motor(0,55);//keep R and L the same
+    motor(1,-55);//pivots CW. Reversing neg would pivot CCW
+    msleep(1500);//I'll shut up about msleep for a while now :)
+    
+    ao();//this is important to have at the end- it shuts off all the motors
+    
+    //now is a good time to compile-if it compiles you're good!
+    //if it doesn't compile, chances are you've forgotten a semicolon or typoed somewhere
+    //compiling also automatically saves your code
+    
+    return 0;
+}
